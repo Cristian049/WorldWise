@@ -1,6 +1,16 @@
+import { useParams } from "react-router-dom";
 import styles from "./City.module.css";
 
+const formatDate = (date) =>
+  new Intl.DateTimeFormat("en", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(date));
+
 function City() {
+  const x = useParams();
+  console.log(x);
   // TEMP DATA
   const currentCity = {
     cityName: "Lisbon",
@@ -43,9 +53,9 @@ function City() {
         </a>
       </div>
 
-      <div>
+      {/* <div>
         <ButtonBack />
-      </div>
+      </div> */}
     </div>
   );
 }
